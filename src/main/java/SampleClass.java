@@ -1,3 +1,5 @@
+import javax.print.attribute.standard.MediaSize.Other;
+
 /**
  * The test cases for this class use methods called .equals which aren't written anywhere in this class. How?
  * All objects have a method called .equals and a method called toString - they are inherited from the Object class,
@@ -56,9 +58,19 @@ public class SampleClass {
     public boolean b;
 
     //    implement a custom .equals(SampleClass other){} method here.
+    public boolean equals(SampleClass other){
+        if (other == null){
+            return false;
+        }
+        return this.a == other.a && this.b == other.b;
+    }
 
 
     //    implement a custom .toString(){} method here.
+    public String toString(){
+        return "SampleClass{a=" + a +", b=" + b + "}";
+    }
+    
 
     
 }
